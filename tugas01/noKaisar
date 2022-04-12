@@ -1,0 +1,51 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void suratKaisar (String kata, int geser) {
+        char alfabet;
+        String hasil = "";
+
+        for (int i = 0; i < kata.length(); i++) {
+            alfabet = kata.charAt(i);
+
+            if ((alfabet >= 'a') && (alfabet <= 'z'))
+            {
+                alfabet = (char)(alfabet + geser);
+                if (alfabet > 'z') {
+                    alfabet = (char)(alfabet + 'a' - 'z' - 1);
+                }
+                hasil = hasil + alfabet;
+            }
+            else if ((alfabet >= 'A') && (alfabet <= 'Z'))
+            {
+                alfabet = (char)(alfabet + geser);
+                if(alfabet>'Z'){
+                    alfabet = (char)(alfabet + 'A' - 'Z' - 1);
+                }
+                hasil = hasil + alfabet;
+            }
+            else
+            {
+                hasil = hasil + alfabet;
+            }
+
+        }
+        System.out.print(hasil);
+    }
+
+    public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+
+        String input;
+        int n;
+
+        input = in.nextLine();
+
+        n = in.nextInt();
+        
+        suratKaisar(input, n);
+
+    }
+}
