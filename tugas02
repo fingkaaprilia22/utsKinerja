@@ -1,0 +1,74 @@
+import java.io.*;
+import java.util.*;
+
+class Persegi {
+    static void LuasPersegi (int sisi){
+        int rumus = sisi*sisi;
+
+        System.out.print(rumus);
+    }
+}
+
+class Segitiga {
+    static void LuasSegitiga (int alas, int tinggi){
+        int rumus = alas * tinggi /2;
+
+        System.out.print(rumus);
+    }
+}
+
+class Lingkaran{
+    static void LuasLingkaran (int jarijari){
+        if (jarijari == 7){
+            double rumus = 22/7 * (Math.pow (jarijari, 2));
+            int akhir = (int) rumus;
+
+            System.out.print((double)akhir);
+        }
+        else {
+            double rumus = 3.14 * (Math.pow (jarijari, 2));
+            int akhir = (int) rumus;
+
+            System.out.print((double) akhir);
+        }
+    }
+
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner input = new Scanner (System.in);
+
+        Lingkaran lingkaranA = new Lingkaran();
+        Persegi persegiA = new Persegi();
+        Segitiga segitigaA = new Segitiga();
+
+        int sisi, alas, tinggi, jari;
+        int menu = input.nextInt();
+
+        if (menu == 1){
+            sisi = input.nextInt();
+
+            persegiA.LuasPersegi(sisi);
+        }
+
+        else if (menu == 2){
+            alas = input.nextInt();
+            tinggi = input.nextInt();
+
+            segitigaA.LuasSegitiga(tinggi, alas);
+        }
+
+        else if (menu == 3){
+            jari = input.nextInt();
+
+            lingkaranA.LuasLingkaran(jari);
+        }
+
+        else {
+            System.out.print("Input yang anda masukan tidak sesuai");
+        }
+    }
+}
