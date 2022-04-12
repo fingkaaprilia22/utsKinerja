@@ -1,0 +1,42 @@
+import java.util.*;
+
+public class dataMerchant {
+    static Scanner input = new Scanner(System.in);
+    static merchant merc[] = new merchant[0];
+
+    public static merchant[] tambahMerchant (merchant merchant){
+
+        merchant newarr [] =  new merchant[dataMerchant.merc.length+1];
+
+        for (int i = 0 ; i < dataMerchant.merc.length ; i++){
+            newarr[i] = dataMerchant.merc[i];
+        }
+
+        newarr[dataMerchant.merc.length] = merchant ;
+        return newarr ;
+
+    }
+
+    public static void tampilData(){
+        for (merchant merchant1 : merc){
+            System.out.println("====Tampilan Data Merchant UBFood====");
+            System.out.println("Nama Merchant   : " + merchant1.getNamaMerchant());
+            System.out.println("Nama Produk     : " + merchant1.getNamaProduk());
+            System.out.println("Harga           : " + (int)merchant1.getHarga());
+        }
+    }
+
+    public static merchant cariMerchant (String nama){
+
+        return null;
+    }
+
+    public static void tampilMerchant (merchant merchant){
+
+    }
+
+    public static void updateMerchant (merchant merchant){
+
+    }
+
+}
