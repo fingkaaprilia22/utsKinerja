@@ -1,0 +1,35 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner input = new Scanner(System.in);
+        int num = input.nextInt();
+
+        isPalindrome(num);
+    }
+    public static int reverse(int num) {
+        int hasil = 0, remainder;
+
+        while (num>0) {
+            remainder = num % 10;
+            hasil = hasil * 10 + remainder;
+            num = num / 10;
+        }
+
+        return hasil;
+    }
+
+    public static boolean isPalindrome(int num) {
+        int palindrome = num;
+
+        if (palindrome == reverse(num))
+            System.out.println(num + " adalah selde.");
+        else
+            System.out.println(num + " bukan selde.");
+
+        return true;
+    }
+}
